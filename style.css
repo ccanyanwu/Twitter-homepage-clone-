@@ -1,0 +1,124 @@
+/*css variables */
+:root{
+  --primary-background:rgb(122,204,254);
+  --bird-color:rgba(29,161,242,1.00);
+  --black:#0f1419;
+  --border:rgb(29,161,242);
+  --footer-color:#5b7083;
+}
+
+*,
+*:before, 
+*:after{
+  box-sizing :border-box ;
+  margin :0 ;
+  padding: 0;
+}
+body{
+  display :grid ;
+  grid-template-columns :1fr ;
+  font-family:'Raleway', sans-serif;
+  overflow-x: hidden;
+  plce-items: center ;
+  scroll-behavior: smooth ;
+}
+a{text-decoration :none;}
+a::visited{
+  color: initial;
+  outline :none ;
+  text-decoration :none ;
+}
+/*main*/
+main{
+  color: var(--black);
+  padding : 1rem 1rem 0;
+}
+main i{
+  color :var(--bird-color);
+  font-size :2.5rem ;
+  padding-bottom: 1rem ;
+}
+h1{
+  font-size :1.5rem ;
+  font-weight :900 ;
+  line-height :1.3125;
+  padding-right: 1rem ;
+}
+main h1 ~ p{
+  font-weight :700 ;
+  margin-top :3.5rem ;
+  margin-bottom :1rem ;
+}
+.signup,
+.login{
+  border-radius :1.5rem;
+  display :block ;
+  font-weight :700;
+  height :2.5rem ;
+  padding-top: 0.625rem ;
+  text-align: center ;
+  width :100%;
+}
+.signup{
+  background :var(--border);
+  color:#fff ;
+}
+.login{
+  border: 1px solid var(--border);
+  color :var(--border);
+  margin-bottom :2rem ;
+  margin-top: 1rem ;
+}
+/*aside*/
+aside{
+  background :var(--primary-background);
+  background-image: url("./images/aside.png");
+  background-ize: cover ;
+  background-repeat: no-repeat ;
+  background-position:  left -50% center  !important;
+  color: #fff ;
+  padding-bottom: 1rem ;
+  padding-top: 1rem ;
+  position:relative ;
+}
+aside div{
+  align-items :center ;
+  display :grid;
+  font-size :1rem ;
+  font-weight: 700 ;
+  grid-template-columns :1fr 9fr;
+  margin :1rem;
+  position: relative ;
+  z-index :3;
+}
+aside  > :nth-child(2) {
+  margin-bottom :3rem ;
+  margin-top :3rem ;
+}
+/*side-btn*/
+.side-btn{
+  display: flex ;
+  flex-wrap: nowrap;
+  justify-content :center ;
+  padding :2rem 1rem ;
+}
+.side-btn a{
+  margin :0 0.5rem;
+}
+/*footer*/
+footer{
+  display :flex ;
+  flelx-direction :row ;
+  flex-wrap: wrap ;
+  justify-content : space-evenly;
+  line-height :2.1rem;
+  padding:1rem 1.75rem;
+  text-align :center ;
+  word-sacing: 1rem ;
+}
+footer a, 
+footer p{
+  color: var(--footer-color);
+  font-size :0.75rem ;
+  margin:0 auto ;
+}
