@@ -1,3 +1,29 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+
 /*css variables */
 :root{
   --primary-background:rgb(122,204,254);
@@ -19,35 +45,43 @@ body{
   grid-template-columns :1fr ;
   font-family:'Raleway', sans-serif;
   overflow-x: hidden;
-  plce-items: center ;
   scroll-behavior: smooth ;
 }
 a{text-decoration :none;}
-a::visited{
+a:visited{
   color: initial;
   outline :none ;
   text-decoration :none ;
 }
 /*main*/
-main{
-  color: var(--black);
-  padding : 1rem 1rem 0;
-}
+main{padding : 1rem 1rem 0;}
 main i{
   color :var(--bird-color);
   font-size :2.5rem ;
   padding-bottom: 1rem ;
 }
 h1{
+  color: var(--black);
   font-size :1.5rem ;
   font-weight :900 ;
   line-height :1.3125;
   padding-right: 1rem ;
 }
 main h1 ~ p{
+  color: var(--black);
   font-weight :700 ;
   margin-top :3.5rem ;
   margin-bottom :1rem ;
+}
+.signup{
+  background :var(--border);
+  color:#fff !important;
+}
+.login{
+  border: 1px solid var(--border);
+  color :var(--border) !important;
+  margin-bottom :2rem ;
+  margin-top: 1rem ;
 }
 .signup,
 .login{
@@ -59,21 +93,11 @@ main h1 ~ p{
   text-align: center ;
   width :100%;
 }
-.signup{
-  background :var(--border);
-  color:#fff ;
-}
-.login{
-  border: 1px solid var(--border);
-  color :var(--border);
-  margin-bottom :2rem ;
-  margin-top: 1rem ;
-}
+
 /*aside*/
 aside{
   background :var(--primary-background);
   background-image: url("./images/aside.png");
-  background-ize: cover ;
   background-repeat: no-repeat ;
   background-position:  left -50% center  !important;
   color: #fff ;
@@ -102,23 +126,49 @@ aside  > :nth-child(2) {
   justify-content :center ;
   padding :2rem 1rem ;
 }
-.side-btn a{
-  margin :0 0.5rem;
-}
+.side-btn a{margin :0 0.5rem;}
 /*footer*/
 footer{
   display :flex ;
-  flelx-direction :row ;
   flex-wrap: wrap ;
   justify-content : space-evenly;
   line-height :2.1rem;
   padding:1rem 1.75rem;
   text-align :center ;
-  word-sacing: 1rem ;
 }
 footer a, 
 footer p{
   color: var(--footer-color);
   font-size :0.75rem ;
   margin:0 auto ;
+}
+/***MEDIA QUERIES***/
+/*tab view*/
+@media all and  (min-width:48rem){
+  main{padding: 1rem 12rem 0;}
+  main i{padding-bottom: 1.5rem ;}
+  h1{font-size :1.875rem ;}
+
+  aside{
+    padding:1rem 10rem 1rem 12rem;
+    background-position:  left 130% top  !important; 
+  }
+  aside div{font-size :1.1875rem ;}
+
+  .side-btn{padding :2rem 12rem ;}
+
+  footer{
+    display :flex ;
+    flex-wrap: wrap ;
+    justify-content : center;
+    line-height :2.1rem;
+    padding:1rem 1.75rem;
+    text-align :center ;
+  }
+  footer a, 
+  footer p{
+    color: var(--footer-color);
+    font-size :0.8125rem ;
+    margin:0 0.25rem ;
+  }
 }
