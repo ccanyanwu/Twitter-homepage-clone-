@@ -169,27 +169,87 @@ footer p{
 /*desktop view*/
 @media all and  (min-width:64rem){
   .hide{display: none;}
-  .show{display: flex;}
+  .show{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, auto);
+    padding: 0 4rem 1rem 4rem;
+    width: 20vw;
+  }
   body{
     grid-template-columns :1fr 1fr;
     grid-template-rows :10fr 1fr;
     min-height: 100vh;
   }
 
-  main{padding: 1rem 9rem 0;}
-  main i{padding-bottom: 1.5rem ;}
-  .show div {
+  main{
+    grid-column: 2/3 !important;
+    grid-row: 1/10;
+    padding: 1rem 0;
+  }
+  main i,
+  main h1,
+  main p{
+    margin-right: 9rem !important;
+    margin-left: 9rem;
+  }
+  main i{
+    
+    margin-top: 2.5rem;
+    padding-bottom: 1.5rem ;
+  }
+  main a.signup,
+  main a.login{
+    display: block;
+    margin:1rem auto;
+    width: 60%;
+  }
+  .show  div {
     display: flex;
+    flex-basis: 3px !important;
     flex-direction: column;
   }
   .show div label{
+    background: rgb(247, 249, 250);;
     color: var(--black);
     font-size: 15px;
+    padding:0.5rem 1rem 0 0.5rem;
   }
+  .show div label:focus{color: var(--border) !important;}
   .show div input{
+    background: rgb(247, 249, 250);;
     border: 0;
-    border-bottom: 1px solid red ;
+    border-bottom: 2px solid var(--black) ;
+    font-size: 15px;
+    padding:0.5rem 1rem 0.5rem 0.5rem;
   }
+  .show div input:focus{
+    border: 0;
+    border-bottom: 2px solid var(--border);
+    color: var(--border);
+    outline: none;
+  }
+  .show div input ~ a{
+    color: var(--border);
+    font-size: 0.75rem;
+    margin: 0.5rem 0.5rem 0;
+  }
+  .show div input ~ a:hover{text-decoration: underline;}
+  .show > :last-child{
+    align-self: baseline;
+    border: 1px solid var(--border);
+    border-radius: 624.9375rem;
+    color: var(--border);
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    height: 2.4375rem;
+    margin-top: 0.6rem;
+    padding-top: 0.609375rem;
+    text-align: center;
+    width: 4.5rem;
+  }
+  .show > :last-child:hover{background: #e8f0fe;}
   h1{font-size :1.875rem ;}
   aside{
     display: grid;
@@ -198,7 +258,10 @@ footer p{
     padding:1rem 7rem 1rem 9rem;
     position: relative;
     align-content: center;
-    
+    background :var(--primary-background);
+    background-image: url("./images/bigg.png");
+    background-repeat: no-repeat ;
+    background-position:  left 20% top 30%  !important;
   }
   footer{
     grid-column: 1/3;
